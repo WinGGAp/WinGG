@@ -22,7 +22,7 @@ if not FileExists($start) Then
 EndIf
 
 if not FileExists($update) Then
-   InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Update.ini", @AppDataDir & "WinGG\update.ini")
+   InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Update.ini", @AppDataDir & "\WinGG\update.ini")
 EndIf
 
 if not FileExists($update_exe) Then

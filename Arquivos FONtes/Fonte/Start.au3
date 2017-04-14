@@ -16,9 +16,10 @@ inf()
 Func need_update()
    $update_dir = @AppDataDir & "\WinGG\update.ini"
    $update = IniRead($update_dir,"version","Default")
+
    $version_dir = @AppDataDir & "\WinGG\version.ini"
    $version_ = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Fonte/Version.ini",$version_dir)
-   $version = IniRead($version, "version", "Default")
+   $version = IniRead($version_,"version", "Default")
    if not ($version = $update) Then
 	  Run(@AppdataDir & "\WinGG\update.exe")
 	  Exit
