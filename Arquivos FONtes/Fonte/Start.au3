@@ -33,15 +33,7 @@ Func start_var()
 EndFunc
 
 
-Func criarpath()
-   Local $path = FileExists(@AppDataDir & "\WinGG")
-   if  not $path Then
-	  DirCreate(@AppDataDir & "\WinGG")
-   Else
-	  DirRemove(@AppDataDir & "\WinGG")
-	  DirCreate(@AppDataDir & "\WinGG")
-   EndIf
-EndFunc
+
 
 Func download()
 $path0 = (@AppDataDir & "\WinGG\" & $_name)
