@@ -3,7 +3,6 @@ $luser = @StartupDir
 $start = $luser & "\Start.exe"
 $update = $luser & "\update.ini"
 $update_exe = $luser & "\update.exe"
-$path = $luser & "\Start.exe"
 
 criarpath()
 download()
@@ -18,16 +17,16 @@ Func criarpath()
 EndFunc
 
 Func download()
-if not FileExists($path) Then
-   InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Start.exe",$path)
+if not FileExists($start) Then
+   InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Start.exe",$start)
 EndIf
 
 if not FileExists($update) Then
-   InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Update.ini",$update)
+   InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Update.ini", @AppDataDir & "WinGG\update.ini")
 EndIf
 
 if not FileExists($update_exe) Then
-   InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Update.exe",@AppdataDir & "\WinGG\update.exe")
+   InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Update.exe", @AppDataDir & "\WinGG\update.exe")
 Run($luser & "\Start.exe")
 EndIf
 EndFunc
