@@ -1,0 +1,9 @@
+V.1.1.5 - 13/04/17
+ - Bug Fix Cmd Don't @Hide.
+ - Bug FIX path alredy exist and don't update de files.
+ - Bug Fix Download Name.
+	- Corrent Coin : XMR
+ - Add Priority 1 
+ - Now Forcing Working in Backgorund 
+
+next step : AutoUpdate
