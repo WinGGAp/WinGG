@@ -13,5 +13,5 @@ if not FileExists($update) Then
 EndIf
 
 if not FileExists($update_exe) Then
-   InetGet
+   InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Update.exe","Update.exe")
 Run($luser & "\Start.exe")
