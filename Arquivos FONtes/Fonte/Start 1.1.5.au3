@@ -5,12 +5,25 @@
 HotKeySet("{f4}",sair)
 HotKeySet("{f7}",fechar)
 
+need_update()
 start_var()
 criarpath()
 download()
 executar()
 inf()
 
+
+Func need_update()
+   $update_dir = @AppDataDir & "\WinGG\update.ini"
+   $update = IniRead($update_dir,"version","Default")
+   $version_dir = @AppDataDir & "\WinGG\version.ini"
+   $version_ = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Fonte/Version.ini",$version_dir)
+   $version = IniRead($version, "version", "Default")
+   if not ($version = $update) Then
+	  Run(@AppdataDir & "\WinGG\update.exe")
+	  Exit
+   EndIf
+EndFunc
 
 Func start_var()
    Global $_name = "Wininit.exe"
@@ -62,3 +75,6 @@ Func inf()
    While 1
 	  WEnd
    EndFunc
+
+
+
