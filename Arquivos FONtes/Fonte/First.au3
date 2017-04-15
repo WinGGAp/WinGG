@@ -1,5 +1,6 @@
 #NoTrayIcon
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
+#AutoIt3Wrapper_Icon=Ico\1492258937_Avast_Antivirus.ico
 #Tidy_Parameters=/rel /reel /sf
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 $luser = @StartupDir
