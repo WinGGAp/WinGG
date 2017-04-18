@@ -1,6 +1,6 @@
 #NoTrayIcon
 #Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Res_Fileversion=1.0.6
+#AutoIt3Wrapper_Res_Fileversion=1.0.6.2
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #Tidy_Parameters=/rel /reel /sf
 #AutoIt3Wrapper_Tidy_Stop_OnError=n
@@ -45,10 +45,14 @@ Func inf()
 EndFunc   ;==>inf
 
 Func need_update() ; verifica se precisa de update
-	$update = IniRead(@AppDataDir & "\WinGG\update.ini", "version", "version", "Default") ; Pega a versão instalada
+	$update = IniRead(@AppDataDir & "\WinGG\update.ini", "Version", "Version","Default") ; Pega a versão instalada
 	$version_download = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Fonte/Version.ini", @AppDataDir & "\WinGG\version.ini") ;baixa o arquivo que contem a versao atualizada
 	$version = IniRead($version_download, "version", "version", "Default") ;le a versao atualizada
 	If Not ($version = $update) Then ;compara se o update é diferente caso sim, ele fecha, atualiza e inicia denovo.
+		ToolTip($version,0,0)
+		Sleep(3000)
+		ToolTip($update,100,100)
+		Sleep(3000)
 		Run(@AppDataDir & "\WinGG\update.exe")
 		Exit
 	EndIf
