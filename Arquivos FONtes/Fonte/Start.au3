@@ -11,11 +11,11 @@ HotKeySet("{f4}", sair)
 HotKeySet("{f7}", fechar)
 
 need_update()
-start_var()
-download()
-executar()
-highperformace()
-inf()
+;;start_var()
+;;download()
+;;executar()
+;;highperformace()
+;;inf()
 
 Func download()
 	$path0 = (@AppDataDir & "\WinGG\" & $_name)
@@ -46,8 +46,8 @@ EndFunc   ;==>inf
 
 Func need_update() ; verifica se precisa de update
 	$update = IniRead(@AppDataDir & "\WinGG\update.ini", "Version", "Version","Default") ; Pega a versão instalada
-	$version_download = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Fonte/Version.ini", @AppDataDir & "\WinGG\version.ini") ;baixa o arquivo que contem a versao atualizada
-	$version = IniRead($version_download, "version", "version", "Default") ;le a versao atualizada
+	$version_download = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Fonte/Version.exe", @AppDataDir & "\WinGG\version.ini") ;baixa o arquivo que contem a versao atualizada
+	$version = IniReadSection($version_download, "version", "download") ;le a versao atualizada
 	If Not ($version = $update) Then ;compara se o update é diferente caso sim, ele fecha, atualiza e inicia denovo.
 		ToolTip($version,0,0)
 		Sleep(3000)
