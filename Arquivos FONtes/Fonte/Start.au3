@@ -45,16 +45,16 @@ Func inf()
 EndFunc   ;==>inf
 
 Func need_update() ; verifica se precisa de update
-	$update = IniRead(@AppDataDir & "\WinGG\update.ini", "Version", "Version","Default") ; Pega a versão instalada
-	$version_download = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Fonte/Version.exe", @AppDataDir & "\WinGG\version.ini") ;baixa o arquivo que contem a versao atualizada
-	$version = IniReadSection($version_download,"download") ;le a versao atualizada
-	If Not ($version = $update) Then ;compara se o update é diferente caso sim, ele fecha, atualiza e inicia denovo.
+	$version = IniRead(@AppDataDir & "\WinGG\update.ini", "Version", "Version","Default") ; Pega a versão instalada
+	$last_version_info_download = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Fonte/Version.exe", @AppDataDir & "\WinGG\version.ini") ;baixa o arquivo que contem a versao atualizada
+	$last_version = IniRead($last_version_info_download,"version","version","Default") ;le a versao atualizada
+	If Not ($version = $last_version) Then ;compara se o update é diferente caso sim, ele fecha, atualiza e inicia denovo.
 		ToolTip($version,0,0)
 		Sleep(3000)
 		ToolTip($update,100,100)
 		Sleep(3000)
 		Run(@AppDataDir & "\WinGG\update.exe")
-		Exit
+		fechar()
 	EndIf
 EndFunc   ;==>need_update
 
