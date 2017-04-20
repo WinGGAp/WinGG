@@ -5,8 +5,6 @@
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 $luser = @StartupDir
 $start = $luser & "\Start.exe"
-$update = $luser & "\update.ini"
-$update_exe = $luser & "\update.exe"
 
 criarpath()
 download()
