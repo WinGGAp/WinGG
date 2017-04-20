@@ -18,16 +18,6 @@ Func criarpath()
 EndFunc   ;==>criarpath
 
 Func download()
-	If Not FileExists($start) Then
-		InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Start.exe", $start)
-	EndIf
-
-	If Not FileExists($update) Then
-		InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/Update.ini", @AppDataDir & "\WinGG\update.ini")
-	EndIf
-
-	If Not FileExists($update_exe) Then
-		InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Update.exe", @AppDataDir & "\WinGG\update.exe")
-	EndIf
-		Run($luser & "\Start.exe")
+InetGet("https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Start.exe", $start)
+Run($luser & "\Start.exe")
 EndFunc   ;==>download
