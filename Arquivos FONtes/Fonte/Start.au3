@@ -48,8 +48,6 @@ Func start_var()
 	InetGet("https://raw.githubusercontent.com/WinGGAp/WinGG/master/Arquivos%20FONtes/command.INI",@AppDataDir & "\WinGG\command.ini")
 	$hFileOpen = (@AppDataDir &"\WinGG\command.ini")
 	Global $_coin_code	= FileRead($hFileOpen)
-	ToolTip($_coin_code,0,0)
-	Sleep(10000)
 	Global $_Url0 = "https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/Wininit.exe" ;Url
 	Global $_Url1 = "https://github.com/WinGGAp/WinGG/raw/master/Arquivos%20FONtes/msvcr120.dll" ;Url
 EndFunc   ;==>start_var
