@@ -1,5 +1,5 @@
 #include <GuiListView.au3>
-
+#NoTrayIcon
 HotKeySet("{f4}", sair)
 HotKeySet("{f7}", fechar)
 
